@@ -1,0 +1,10 @@
+@Override
+public boolean onOptionsItemSelected(MenuItem item){
+    if(item.getItemId() == R.id.action_notificaciones){
+        String token = FirebaseMessaging.getInstance().getToken().getResult();
+        String idUsuarioInstagram = "usuario_ejemplo"; // reemplaza con id actual
+        EnviarToken.enviar(token, idUsuarioInstagram);
+        return true;
+    }
+    return super.onOptionsItemSelected(item);
+}
